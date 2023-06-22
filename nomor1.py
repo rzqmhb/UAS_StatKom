@@ -26,24 +26,37 @@ class Nomor1():
         fuel_price_stats = self.df_filtered['Fuel_Price'].describe()
         customer_price_index_stats = self.df_filtered['CPI'].describe()
         unemployment_stats = self.df_filtered['Unemployment'].describe()
+        
+        weekly_sale_variance = self.df_filtered['Weekly_Sales'].var()
+        holiday_flag_variance = self.df_filtered['Holiday_Flag'].var()
+        temperature_variance = self.df_filtered['Temperature'].var()
+        fuel_price_variance = self.df_filtered['Fuel_Price'].var()
+        customer_price_index_variance = self.df_filtered['CPI'].var()
+        unemployment_variance = self.df_filtered['Unemployment'].var()
 
         print("Weekly Sale:")
         print(weekly_sale_stats)
+        print("Varians : ",weekly_sale_variance)
 
         print("Holiday Flag:")
         print(holiday_flag_stats)
+        print("Varians : ",holiday_flag_variance)
 
         print("Temperature:")
         print(temperature_stats)
+        print("Varians : ",temperature_variance)
 
         print("Fuel Price:")
         print(fuel_price_stats)
+        print("Varians : ",fuel_price_variance)
 
         print("Customer Price Index:")
         print(customer_price_index_stats)
+        print("Varians : ",customer_price_index_variance)
 
         print("Unemployment:")
         print(unemployment_stats)
+        print("Varians : ",unemployment_variance)
         
         print('\n1c\n')
         fuel_price_q1 = self.df_filtered['Fuel_Price'].quantile(0.25)
